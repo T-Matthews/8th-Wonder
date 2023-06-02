@@ -11,6 +11,18 @@
     <link rel="stylesheet" href="">
 </head>
 <body>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+
+
     <nav class="nav navbar navbar-expand-lg navbar-light background-color: #9bf8e7">
         <a class="navbar-brand nav-title" href="#">   <img id="navbar-logo"src="static/images/8th_Wonder_Logo_Black.png" height="45" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

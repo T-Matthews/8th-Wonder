@@ -12,14 +12,14 @@
 </head>
 <body>
     <nav class="nav navbar navbar-expand-lg navbar-light background-color: #9bf8e7">
-        <a class="navbar-brand nav-title" href="#">   <img src="static/images/favicon2.png" width="40" height="45" alt="">th Wonder</a>
+        <a class="navbar-brand nav-title" href="#">   <img id="navbar-logo"src="static/images/8th_Wonder_Logo_Black.png" height="45" alt=""></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
+          <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#"><b>Home</b> <span class="sr-only"></span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Features</a>
@@ -27,9 +27,23 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Pricing</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
+
+          </ul>
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('auth.login') }}">
+                <button type="button" class="btn btn-secondary">Login</button>
+              </a>
             </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('auth.login') }}">
+                <button type="button" class="btn btn-outline-secondary">Sign Up</button>
+                <span class="sr-only">
+                </span>
+              </a>
+            </li>
+         
+            
           </ul>
         </div>
       </nav>

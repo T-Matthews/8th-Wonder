@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Sign In
+{% endblock title %}
+
+{% block content %}
+ 
+<form class="p-3" method="POST">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        <fieldset id="username-field">
+            {{ form.username.label }}
+            {{ form.username(class='form-control',placeholder='Enter Username Here') }}
+        </fieldset>
+    </div>
+    <br>
+    <div class="form-group">
+        {{ form.password.label }}
+        {{ form.password(class='form-control', placeholder='Enter Password Here') }}
+    </div>
+<br>
+<!-- NOT USING FOLLOWING AT THE MOMENT. Future Feature, checkbox for staying signed in. -->
+
+    <!-- <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Stay Signed In</label>
+    </div> -->
+
+
+    {{ form.submit(class='btn btn-success pl-5') }}
+</form>
+{% endblock content %}

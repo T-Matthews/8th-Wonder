@@ -1,0 +1,16 @@
+
+.login-logo{
+    padding: 12px;
+    background-color: aquamarine;
+    border-radius: 3px;
+    box-shadow: 4px 3px 3px lightgray ;
+
+}
+.login-title{
+    text-align: center;
+}
+.btn{
+    align-items: center;
+    margin-left: 30%;
+    width:40%
+}

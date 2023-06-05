@@ -13,7 +13,17 @@
     <title>8th Wonder | {% block title %}{% endblock title %}</title>
 </head>
 <body>
-
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+      <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+        {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+  
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
     <div class="container col-4 pt-5">
         <div class="row login-logo"><img class= 'img-fluid' src = '../../static/images/8th_Wonder_Logo.png' alt="login-logo"/>
         </div>
@@ -22,6 +32,11 @@
             <h2 class="login-title">LOGIN</h2>
             <br>
             <div class="col">
+
+
+
+
+                
     {% block content %}
 
 

@@ -5,7 +5,7 @@ from .auth.routes import auth
 
 
 #imports for DB
-from .models import db
+from .models import db, login
 from flask_migrate import Migrate
 
 
@@ -19,6 +19,9 @@ app.register_blueprint(auth)
 #set up ORM and migrate comms with app and each other
 db.init_app(app)
 migrate=Migrate(app,db)
+
+#Login Manager setup
+login.init_app(app)
 
 
 

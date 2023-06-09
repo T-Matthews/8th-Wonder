@@ -22,6 +22,9 @@ migrate=Migrate(app,db)
 
 #Login Manager setup
 login.init_app(app)
+login.login_view ='auth.login'
+login.login_message='Please log in to access this page.'
+login.login_message_category = 'danger'
 
 
 

@@ -35,18 +35,34 @@
 
           </ul>
           <ul class="navbar-nav ms-auto">
+            {% if current_user.is_authenticated %}
+            <li class="nav-item active pt-3">
+              {%if current_user.first_name != "" %}
+                <p class="nav-item">Hello, <b>{{ current_user.first_name }} {{ current_user.last_name }}</b> </p>
+              {% else %}
+                <p class="nav-item">Logged in as <b>{{ current_user.username }}</b> </p>
+              {% endif %}
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('auth.logout') }}">
+                <button type="button" class="btn btn-secondary">Logout</button>
+              </a>
+            </li>
+            
+            {% else %}
             <li class="nav-item active">
               <a class="nav-link" href="{{ url_for('auth.login') }}">
                 <button type="button" class="btn btn-secondary">Login</button>
               </a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="{{ url_for('auth.login') }}">
+              <a class="nav-link" href="{{ url_for('auth.register') }}">
                 <button type="button" class="btn btn-outline-secondary">Sign Up</button>
                 <span class="sr-only">
                 </span>
-              </a>
-            </li>
+              </a> 
+            </li> 
+            {% endif %}
          
             
           </ul>

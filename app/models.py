@@ -18,8 +18,8 @@ from uuid import uuid4
 from werkzeug.security import generate_password_hash
 
 class User(db.Model, UserMixin):
-    id = db.Column(db.String(32),primary_key=True)
-    username=db.column(db.String(100),nullable=False,unique=True)
+    id = db.Column(db.String(40),primary_key=True)
+    username=db.Column(db.String(100),nullable=False,unique=True)
     email=db.Column(db.String(100),nullable = False, unique = True)
     password=db.Column(db.String(255),nullable=False)
     created = db.Column(db.DateTime, default=datetime.utcnow())
